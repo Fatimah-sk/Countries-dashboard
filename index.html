@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+        try {
+          const savedTheme = localStorage.getItem("countries-theme");
+
+                document.documentElement.dataset.theme =
+                  savedTheme === "dark" ? "dark" : "light";
+              } catch {
+                document.documentElement.dataset.theme = "light";
+        }
+    </script>
+    <link rel="stylesheet" href="./src/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countries Dashboard</title>
   </head>
   <body>
-    <header class="topbar">
-      <h1>Countries Dashboard</h1>
-    </header>
+      <header class="topbar">
+        <h1>Countries Dashboard</h1>
+
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          🌙 Dark Mode
+        </button>
+     </header>
 
       <main class="container">
         <section class="controls">

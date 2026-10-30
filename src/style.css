@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
    box-sizing: border-box; 
    margin: 0;
     padding: 0; 
+    
   }
 
 body { 
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: 'Inter', Arial, sans-serif;
   background: #FAFAFA; 
   color: #0c0c0c; 
 
@@ -119,6 +122,8 @@ body {
   padding: 20px;
   box-shadow: #0c0c0c1a 0px 1px 8px;
   margin-top: 50px;
+  min-height: 350px;
+  align-items: center;
 
 }
 
@@ -271,4 +276,122 @@ body {
     font-size: 12px;
     line-height: 1.6;
   }
+}
+
+
+
+/* Theme variables */
+:root {
+  --bg-color: #fafafa;
+  --surface-color: #ffffff;
+  --text-color: #0c0c0c;
+  --border-color: #b9babc;
+  --shadow-color: #0c0c0c1a;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-color: #f1f5f9;
+  --border-color: #334155;
+  --shadow-color: #02061766;
+}
+
+/* Theme colors */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.topbar,
+.card,
+.details-card,
+.footer,
+.scroll-top,
+.input,
+.select {
+  background: var(--surface-color);
+  color: var(--text-color);
+}
+
+.card,
+.details-card,
+.input,
+.select,
+.back-btn {
+  border-color: var(--border-color);
+}
+
+.back-btn {
+  color: var(--text-color);
+}
+
+.topbar,
+.card,
+.details-card,
+.footer,
+.input,
+.select {
+  box-shadow: 0 1px 8px var(--shadow-color);
+}
+
+.card:hover {
+  box-shadow: 0 3px 14px var(--shadow-color);
+}
+
+.scroll-top {
+  box-shadow: 0 1px 8px var(--shadow-color);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  background: var(--shadow-color);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .theme-toggle {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+}
+
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+
+
+.details-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-page main {
+  flex: 1;
+  width: 100%;
 }

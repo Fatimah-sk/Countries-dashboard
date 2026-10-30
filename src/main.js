@@ -1,8 +1,10 @@
-import "./style.css";
 import { fetchAllCountries } from "./api/countries.js";
 import { CountryCard } from "./components/CountryCard.js";
 import { Search } from "./components/Search.js";
 import { Filter } from "./components/Filter.js";
+import { initTheme } from "./theme.js";
+
+initTheme();
 
 const grid = document.querySelector("#grid");
 const statusEl = document.querySelector("#status");

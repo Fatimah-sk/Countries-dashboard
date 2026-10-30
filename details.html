@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <script>
+        try {
+          const savedTheme = localStorage.getItem("countries-theme");
+
+                document.documentElement.dataset.theme =
+                  savedTheme === "dark" ? "dark" : "light";
+              } catch {
+                document.documentElement.dataset.theme = "light";
+        }
+    </script>
+    <link rel="stylesheet" href="./src/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country Details</title>
   </head>
-  <body >
+  <body class="details-page">
     <header class="topbar">
      <a class="back-btn" href="./index.html">← Back</a>
      <h1>Countries Dashboard</h1>
@@ -15,6 +26,12 @@
         <section id="details" class="details"></section>
         <p id="status" class="status"></p>
       </main>
+    <footer class="footer">
+    <p>
+      © 2026 Fatimah Sk — Countries Dashboard |
+      Powered by Countries.dev API
+    </p>
+  </footer>
 
 
      <script type="module" src="./src/details.js"></script>

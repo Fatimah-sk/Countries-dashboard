@@ -1,6 +1,8 @@
-import "./style.css";
 import { fetchCountryByCode } from "./api/countries.js";
 import { DetailsView } from "./components/Details.js";
+import { initTheme } from "./theme.js";
+
+initTheme();
 
 const detailsEl = document.querySelector("#details");
 const statusEl = document.querySelector("#status");
